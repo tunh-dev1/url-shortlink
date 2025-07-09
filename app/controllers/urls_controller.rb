@@ -1,5 +1,6 @@
 class UrlsController < ApplicationController
   skip_before_action :verify_authenticity_token, only: :encode
+
   def encode
     url_record = Url.find_by(original_url: params[:original_url])
     shorted_url = ""
@@ -15,9 +16,8 @@ class UrlsController < ApplicationController
   end
 
   def decode
-    service = UrlService.new
-    original_url = service.decode(params[:shorted_url])
-
+    url_record = Url.find_by(shorted_url: params[:shorted_url])
+    original_url = url_record&.original_url
     if original_url
       render json: { original_url: original_url , message: "Decode URL Successfully!"}, status: :ok
     else
