@@ -1,0 +1,11 @@
+default: &default
+  adapter: mysql2
+  encoding: utf8
+  database: short-url-db
+  username: root
+  password: Matkhau123!!!
+  host: localhost
+  port: 3306
+
+development:
+  <<: *default
