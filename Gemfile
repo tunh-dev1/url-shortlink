@@ -18,6 +18,7 @@ gem "stimulus-rails"
 gem "jbuilder"
 gem "mysql2"
 gem "api"
+
 # Use Redis adapter to run Action Cable in production
 # gem "redis", ">= 4.0.1"
 
@@ -45,6 +46,9 @@ group :development, :test do
 
   # Omakase Ruby styling [https://github.com/rails/rubocop-rails-omakase/]
   gem "rubocop-rails-omakase", require: false
+  gem 'rspec', '~> 3.4'
+  gem 'rspec-rails', '~> 5.0'
+  gem 'factory_bot_rails'
 end
 
 group :development do

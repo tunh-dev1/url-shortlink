@@ -67,3 +67,13 @@ The /encode endpoint requires the following form data:
 The response will return the shortened URL.
 
 You can add the short-code into the /decode/{short-code} to get the original_url
+
+## 6. Test
+1. Run the following commands to setup the test database:
+
+		rails db:create RAILS_ENV=test
+		rails db:migrate RAILS_ENV=test
+
+2. Run the following command to test with RSpec
+
+		bundle exec rspec spec/requests/url_requests_spec.rb
